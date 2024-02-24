@@ -1,20 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif
 }
-
 header {
     position: fixed;
     top: 0;
     margin: 100;
     width: 90%;
-    /* Outros estilos do cabeçalho */
 }
-
 .header-button {
     width: 100%;
     height: 55px;
@@ -44,7 +40,6 @@ header {
     justify-content: space-evenly;
     padding: 25px;
 }
-
 .search-btn{
 width: 30px;
 height: 40px;
@@ -55,38 +50,29 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-
 }
 .header-button:active {
-    /* Estilos do botão quando clicado */
-
     transform: scale(0.95);
-    /* Faz o botão parecer que está sendo pressionado */
 }
-
 .img-circle {
     border-radius: 50%;
-    width: 30%; /* Ajuste este valor conforme necessário */
+    width: 30%; 
     height: auto;
     object-fit: cover;
     margin-top: 50px; 
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
 }
-
 th, td {
-    width: 50px; /* Ajuste este valor conforme necessário */
-    height: 50px; /* Ajuste este valor conforme necessário */
+    width: 50px;
+    height: 50px; 
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
 tr:hover {background-color: #f5f5f5;}
-
 body {
 
     background-image: url(background.png);
@@ -99,13 +85,11 @@ body {
     padding: 100px;
     min-height: 100vh;
 }
-
 .w50 {
     width: 50%;
     float: left;
     padding-right: 15px;
 }
-
 .w30 {
     width: 30%;
     float: left;
@@ -148,7 +132,6 @@ body {
     width: 1230px;
 
 }
-
 .form-box {
     background-color: rgba(255, 255, 255, 0.21);
     backdrop-filter: blur(40px);
@@ -156,7 +139,6 @@ body {
     width: 100%;
     border-radius: 30px;
 }
-
 .form-box-list {
     background-color: rgba(255, 255, 255, 0.21);
     backdrop-filter: blur(40px);
@@ -166,31 +148,25 @@ body {
     margin-top: 80px;  
     clear: both;
 }
-
 .form-box h2 {
     font-size: 30px;
 }
-
 .form-box p {
     font-weight: bold;
     color: #3D3D3D;
 }
-
 .form-box form {
     margin: 20px 0;
 }
-
 form .input-group {
     margin-bottom: 15px;
 }
-
 form .input-group label {
     color: #3D3D3D;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
-
 form .input-group input {
     width: 100%;
     height: 37px;
@@ -203,7 +179,6 @@ form .input-group input {
     color: #616161;
     transition: all 0.4s ease;
 }
-
 form .input-group button {
     width: 100%;
     height: 47px;
@@ -216,19 +191,56 @@ form .input-group button {
     cursor: pointer;
     font-size: 16px;
 }
-
 .input-group:active {
-    /* Estilos do botão quando clicado */
-
-    transform: scale(0.99);
-    /* Faz o botão parecer que está sendo pressionado */
-}
-
-
-
+     transform: scale(0.99);
+ }
 @media (max-width:500px) {
     .w50 {
         width: 100%;
         padding: 0;
     }
+}
+/* Estilos existentes */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    min-width: 100px; /* Ajuste este valor conforme necessário */
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.21);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    width: 100%;
+    height: 60px;
+    background: #b10099ad;
+    border-radius: 20px;
+    outline: none;
+    border: 0cm;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: bold;
 }
