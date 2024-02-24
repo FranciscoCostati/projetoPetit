@@ -1,0 +1,35 @@
+
+document.querySelectorAll('form').forEach(form => {
+   
+    form.addEventListener('submit', function(event) {
+     
+        event.preventDefault(); // Impede o envio normal do formulário
+        console.log("linha 7 converterDataHtmlToJson.js")
+        form.elements 
+        var data = Array.from(this.elements).reduce((obj, input) => { 
+            console.log("linha 10 converterDataHtmlToJson.js")
+            if (input.name) {
+                obj[input.name] = input.value;
+            }
+            console.log("linha 14 converterDataHtmlToJson.js")
+            return obj;
+        }, {});
+        console.log("linha 17 converterDataHtmlToJson.js")
+        fetch(this.action, { // Envia os dados como JSON para o servidor
+            
+            method: this.method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+           
+        }).then(response => { // Verifica a resposta do servidor
+            console.log("linha 27 converterDataHtmlToJson.js")
+            if (response.status === 201) { // Se o status for 201
+                alert("Dados inseridos com sucesso"); // Exibe o alerta
+            }
+        })
+      
+    });
+});
+

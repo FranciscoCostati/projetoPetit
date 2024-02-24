@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario responsivo com html e css</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="findAluna.js"></script>
+</head>
+
+<body>
+
+    <header>
+
+
+        <div id="header"></div>
+
+    </header>
+    <div class="box">
+        <div class="form-box-list">
+            <form action="#">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome da Aluna</th>
+                            <th>CPF/RG do Responsável</th>
+                            <th>CPF/RG da Aluna</th>
+                            <th>Nome do Responsável</th>
+                        </tr>
+                    </thead>
+                  
+                    <tbody>
+                        
+                        <script type="text/javascript" src="../controllers/findAluna.js"></script>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+        });
+    </script> 
+</body> 
+
+</html>
