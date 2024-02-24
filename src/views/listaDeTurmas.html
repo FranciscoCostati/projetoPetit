@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,107 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Formulario responsivo com html e css</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="findATurma.js"></script>
 </head>
 
 <body>
+
     <header>
+
 
         <div id="header"></div>
 
     </header>
-    
-    <div style="display: flex; flex-direction: column;">
-        <div class="box">
-            <div class="form-box-list">
+    <div class="box">
+        <div class="form-box-list">
+            <form action="#">
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Turma</th>
-                            <th>Horário da turma</th>
-                            <th>Faixa etária</th>
-                            <th>Dia de aula</th>
-            
-                        <tr>
-                    </thead>
-                    <tbody>
-                       
-                        <tr>
-                            <td>T01</td>
-                            <td>Axé</td>
-                            <td>86</td>
-                            <td>77</td>
-                            <td>87</td>
-                           
+                            <th>Nome da Turma</th>
+                     
                         </tr>
-
-             
+                    </thead>
+                  
+                    <tbody>
+                        
+                        <script type="text/javascript" src="../controllers/findTurma.js"></script>
                     </tbody>
                 </table>
-            </div>
-        </div>
-        <div class="box">
-            <div class="form-box-list">
-                <form action="#">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>English</th>
-                                <th>Maths</th>
-                                <th>Science</th>
-                                <th>Computer Science</th>
-                                <th>Social Studies</th>
-                                <th>Total</th>
-                                <th>Max Marks</th>
-                                <th>Grade </th>
-                            <tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td>Bhasker</td>
-                                <td>86</td>
-                                <td>77</td>
-                                <td>87</td>
-                                <td>92</td>
-                                <td>95</td>
-                                <td>437</td>
-                                <td>500</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>02</td>
-                                <td>Balwant</td>
-                                <td>86</td>
-                                <td>77</td>
-                                <td>87</td>
-                                <td>92</td>
-                                <td>95</td>
-                                <td>437</td>
-                                <td>500</td>
-                                <td>A</td>
-                            </tr>
-                           
-    
-                        </tbody>
-                    </table>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
-    
-        
- 
-       
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function() {
             $("#header").load("header.html");
         });
     </script> 
-</body>
+</body> 
 
 </html>

@@ -205,8 +205,8 @@ form .input-group button {
 .dropdown {
     position: relative;
     display: inline-block;
-    width: 15%;
-    min-width: 100px; /* Ajuste este valor conforme necessário */
+    width: 180px;
+  left:-80px;
 }
 
 

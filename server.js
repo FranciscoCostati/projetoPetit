@@ -23,6 +23,21 @@ app.post("/createAluna", async(req, res) => {
    await data.Turma.create(req.body);
    res.sendStatus(201);   
  });
+ 
+ app.get("/findAllTurma", async(req, res) => {
+  data.Turma.findAll()
+  .then(turmas => {
+    // Enviar o array de Turmas como resposta JSON
+    res.json(turmas);
+  })
+  .catch(error => {
+    // Tratar o erro
+    console.error(error);
+    // Enviar um status de erro como resposta
+    res.status(500).send("Ocorreu um erro ao buscar as Turmas");
+  });
+});
+
  app.get("/findAllAluna", async(req, res) => {
     data.Aluna.findAll()
     .then(alunas => {
