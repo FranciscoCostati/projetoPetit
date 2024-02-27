@@ -1,5 +1,6 @@
 var tbody = document.querySelector("tbody");
 
+
 function listarTurmas() {
   var xhr = new XMLHttpRequest();
 

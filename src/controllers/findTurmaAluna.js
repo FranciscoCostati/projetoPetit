@@ -2,33 +2,36 @@
 var tbody = document.querySelector("tbody");
 
 // Criar uma função para fazer a requisição HTTP
-function listarTurmaAlunas() {
+function listarTurmaAluna() {
+  // Recuperar o valor do localStorage
+  var idTurma = localStorage.getItem('valorTd');
+
   // Criar um objeto XMLHttpRequest
   var xhr = new XMLHttpRequest();
 
   // Abrir uma conexão GET com a rota
-  xhr.open("GET", "http://localhost:8083/findAllTurmaAluna");
+  xhr.open("GET", "http://localhost:8083/findAllTurmaAluna/" + idTurma);
 
   // Definir o que fazer quando a resposta chegar
   xhr.onload = function() {
     // Verificar se o status é 200 (OK)
     if (xhr.status == 200) {
       // Converter a resposta em um array de objetos JSON
-      var alunas = JSON.parse(xhr.responseText);
-
+      var TurmaAluna = JSON.parse(xhr.responseText);
+console.log(TurmaAluna);
       // Ordenar o array de alunas por nome
     // Ordenar o array de alunas por nome
-alunas.sort(function(a, b) {
-  if (a.nomeAluna && b.nomeAluna) {
-    return a.nomeAluna.localeCompare(b.nomeAluna);
-  } else {
-    return 0;
-  }
-});
+// TurmaAluna.sort(function(a, b) {
+//   if (a.nomeTurmaAluna && b.nomeTurmaAluna) {
+//     return a.nomeTurmaAluna.localeCompare(b.nomeTurmaAluna);
+//   } else {
+//     return 0;
+//   }
+// });
 
 
       // Percorrer o array de alunas
-      for (var i = 0; i < alunas.length; i++) {
+      for (var i = 0; i < TurmaAluna.length; i++) {
         // Criar um elemento tr
         var tr = document.createElement("tr");
 
@@ -40,11 +43,11 @@ alunas.sort(function(a, b) {
         var tdNomeResponsavel = document.createElement("td");
 
         // Preencher os elementos td com os valores da aluna
-        tdId.textContent = alunas[i].idAluna;
-        tdNome.textContent = alunas[i].nomeAluna;
-        tdCpfRgResponsavel.textContent = alunas[i].cpfRgResponsavel;
-        tdCpfRgAluna.textContent = alunas[i].cpfRgAluna;
-        tdNomeResponsavel.textContent = alunas[i].nomeResponsavel;
+        tdId.textContent = TurmaAluna[i].aluna.idAluna;
+        tdNome.textContent = TurmaAluna[i].aluna.nomeAluna;
+        tdCpfRgResponsavel.textContent = TurmaAluna[i].aluna.cpfRgResponsavel;
+        tdCpfRgAluna.textContent = TurmaAluna[i].aluna.cpfRgAluna;
+        tdNomeResponsavel.textContent = TurmaAluna[i].aluna.nomeResponsavel;
 
         // Adicionar os elementos td ao elemento tr
         tr.appendChild(tdId);
@@ -64,4 +67,4 @@ alunas.sort(function(a, b) {
 }
 
 // Chamar a função ao carregar a página
-window.onload = listarTurmaAlunas;
+window.onload = listarTurmaAluna;

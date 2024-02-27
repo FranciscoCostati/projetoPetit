@@ -15,16 +15,16 @@ function listarAlunas() {
     if (xhr.status == 200) {
       // Converter a resposta em um array de objetos JSON
       var alunas = JSON.parse(xhr.responseText);
-
+      console.log(alunas);
       // Ordenar o array de alunas por nome
     // Ordenar o array de alunas por nome
-alunas.sort(function(a, b) {
-  if (a.nomeAluna && b.nomeAluna) {
-    return a.nomeAluna.localeCompare(b.nomeAluna);
-  } else {
-    return 0;
-  }
-});
+// alunas.sort(function(a, b) {
+//   if (a.nomeAluna && b.nomeAluna) {
+//     return a.nomeAluna.localeCompare(b.nomeAluna);
+//   } else {
+//     return 0;
+//   }
+// });
 
 
       // Percorrer o array de alunas

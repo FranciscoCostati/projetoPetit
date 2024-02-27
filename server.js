@@ -52,11 +52,20 @@ app.post("/createAluna", async(req, res) => {
     });
  });
 
- app.get("/findAllTurmaAluna", async(req, res) => {
-  data.Aluna.findAll()
-  .then(alunas => {
+ app.get("/findAllTurmaAluna/:idTurma", async(req, res) => {
+  const idTurma = req.params.idTurma;
+  AlunaTurma.findAll({
+    where: {
+        fk_idTurma: idTurma
+    },
+    include: [{
+        model: data.Aluna,
+        required: true
+    }]
+  })
+  .then(turmaAluna => {
     // Enviar o array de alunas como resposta JSON
-    res.json(alunas);
+    res.json(turmaAluna);
   })
   .catch(error => {
     // Tratar o erro
@@ -65,6 +74,7 @@ app.post("/createAluna", async(req, res) => {
     res.status(500).send("Ocorreu um erro ao buscar as alunas");
   });
 });
+
  console.log("linha 21 server.js")
 app.listen(8083,() =>{
     console.log("linha 23 server.js")

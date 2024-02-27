@@ -46,6 +46,11 @@ const Contato = db.define('contato', {
         type: Sequelize.INTEGER,
         allowNull: false
     }
+},
+{
+    timestamps: false,
+    freezeTableName: true
+
 });
 
 const Despesa = db.define('despesa', {
@@ -66,6 +71,11 @@ const Despesa = db.define('despesa', {
     fk_alunaDespesa: {
         type: Sequelize.INTEGER
     }
+},
+{
+    timestamps: false,
+    freezeTableName: true
+
 });
 
 const Endereco = db.define('endereco', {
@@ -126,6 +136,11 @@ const AlunaTurma = db.define('aluna_turma', {
         type: Sequelize.INTEGER,
         allowNull: false
     }
+},
+{
+    timestamps: false,
+    freezeTableName: true
+
 });
 
 const Email = db.define('email', {
@@ -142,6 +157,11 @@ const Email = db.define('email', {
         type: Sequelize.INTEGER,
         allowNull: false
     }
+},
+{
+    timestamps: false,
+    freezeTableName: true
+
 });
 
 
