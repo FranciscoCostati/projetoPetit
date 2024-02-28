@@ -19,21 +19,31 @@ Turmas.sort(function(a, b) {
 });
 
 
-      for (var i = 0; i < Turmas.length; i++) {
-        var tr = document.createElement("tr");
+for (var i = 0; i < Turmas.length; i++) {
+  var tr = document.createElement("tr");
+  var tdId = document.createElement("td");
+  var tddescricao = document.createElement("td");
 
-        var tdId = document.createElement("td");
-        var tddescricao = document.createElement("td");
+  tdId.textContent = Turmas[i].idTurma;
+  tddescricao.textContent = Turmas[i].descricao;
 
-        tdId.textContent = Turmas[i].idTurma;
-        tddescricao.textContent = Turmas[i].descricao;
-     
+  tr.appendChild(tdId);
+  tr.appendChild(tddescricao);
 
-        tr.appendChild(tdId);
-        tr.appendChild(tddescricao);
-  
-        tbody.appendChild(tr);
-      }
+  // Adicionando evento de clique à linha
+  tr.addEventListener('click', function() {
+    // Capturando o valor da primeira célula
+    var firstCell = this.cells[0];
+    var firstCellValue = firstCell.textContent || firstCell.innerText;
+    // Armazenando o valor em uma variável
+    var myVariable = firstCellValue;
+    console.log("myVariable is "+myVariable); // Você pode substituir isso pela ação que você quer realizar com a variável
+    window.location='turma.html?turmaId=' + myVariable; 
+  });
+
+  tbody.appendChild(tr);
+}
+
     }
   };
 

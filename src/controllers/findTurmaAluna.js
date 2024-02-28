@@ -4,13 +4,15 @@ var tbody = document.querySelector("tbody");
 // Criar uma função para fazer a requisição HTTP
 function listarTurmaAluna() {
   // Recuperar o valor do localStorage
-  var idTurma = localStorage.getItem('valorTd');
+  var urlParams = new URLSearchParams(window.location.search);
+  var myVariable = urlParams.get('turmaId');
+  console.log("myvariable is "+ myVariable); // Agora você tem o valor da variável na página turma.html
 
   // Criar um objeto XMLHttpRequest
   var xhr = new XMLHttpRequest();
 
-  // Abrir uma conexão GET com a rota
-  xhr.open("GET", "http://localhost:8083/findAllTurmaAluna/" + idTurma);
+  // Abrir uma conexão GET com a rota, adicionando myVariable ao final da URL
+  xhr.open("GET", "http://localhost:8083/findAllTurmaAluna/"+ myVariable);
 
   // Definir o que fazer quando a resposta chegar
   xhr.onload = function() {
@@ -18,24 +20,12 @@ function listarTurmaAluna() {
     if (xhr.status == 200) {
       // Converter a resposta em um array de objetos JSON
       var TurmaAluna = JSON.parse(xhr.responseText);
-console.log(TurmaAluna);
-      // Ordenar o array de alunas por nome
-    // Ordenar o array de alunas por nome
-// TurmaAluna.sort(function(a, b) {
-//   if (a.nomeTurmaAluna && b.nomeTurmaAluna) {
-//     return a.nomeTurmaAluna.localeCompare(b.nomeTurmaAluna);
-//   } else {
-//     return 0;
-//   }
-// });
+      console.log(TurmaAluna);
 
-
-      // Percorrer o array de alunas
       for (var i = 0; i < TurmaAluna.length; i++) {
         // Criar um elemento tr
         var tr = document.createElement("tr");
 
-        // Criar um elemento td para cada propriedade da aluna
         var tdId = document.createElement("td");
         var tdNome = document.createElement("td");
         var tdCpfRgResponsavel = document.createElement("td");

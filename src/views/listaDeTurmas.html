@@ -9,17 +9,6 @@
     <title>Formulario responsivo com html e css</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="findATurma.js"></script>
-    <script>
-        // Função para guardar o valor do primeiro td
-        function guardarValor(elemento) {
-            // Pegar o primeiro td dentro do elemento clicado
-            var td = elemento.querySelector("td");
-            // Guardar o valor do td em uma variável
-            var valor = td.textContent;
-            // Guardar o valor em localStorage para usar em outro lugar
-            localStorage.setItem('valorTd', valor);
-        }
-    </script>
 </head>
 
 <body>
@@ -37,10 +26,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr onclick="guardarValor(this); window.location='turma.html';">
-                            <td>1</td>
+                        <tr onclick="window.location='turma.html';">
+                            <td>0</td>
                             <td>teste clic</td>
-                        </tr>
+                          </tr>
+                          
                         <script type="text/javascript" src="../controllers/findTurma.js"></script>
                     </tbody>
                 </table>
