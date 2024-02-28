@@ -3,7 +3,7 @@ document.querySelectorAll('form').forEach(form => {
    
     form.addEventListener('submit', function(event) {
      
-        event.preventDefault(); // Impede o envio normal do formulário
+        event.preventDefault(); 
         console.log("linha 7 converterDataHtmlToJson.js")
         form.elements 
         var data = Array.from(this.elements).reduce((obj, input) => { 
@@ -15,7 +15,7 @@ document.querySelectorAll('form').forEach(form => {
             return obj;
         }, {});
         console.log("linha 17 converterDataHtmlToJson.js")
-        fetch(this.action, { // Envia os dados como JSON para o servidor
+        fetch(this.action, { 
             
             method: this.method,
             headers: {
@@ -23,10 +23,10 @@ document.querySelectorAll('form').forEach(form => {
             },
             body: JSON.stringify(data)
            
-        }).then(response => { // Verifica a resposta do servidor
+        }).then(response => { 
             console.log("linha 27 converterDataHtmlToJson.js")
-            if (response.status === 201) { // Se o status for 201
-                alert("Dados inseridos com sucesso"); // Exibe o alerta
+            if (response.status === 201) { 
+                alert("Dados inseridos com sucesso"); 
             }
         })
       

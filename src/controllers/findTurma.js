@@ -30,14 +30,11 @@ for (var i = 0; i < Turmas.length; i++) {
   tr.appendChild(tdId);
   tr.appendChild(tddescricao);
 
-  // Adicionando evento de clique à linha
   tr.addEventListener('click', function() {
-    // Capturando o valor da primeira célula
     var firstCell = this.cells[0];
     var firstCellValue = firstCell.textContent || firstCell.innerText;
-    // Armazenando o valor em uma variável
     var myVariable = firstCellValue;
-    console.log("myVariable is "+myVariable); // Você pode substituir isso pela ação que você quer realizar com a variável
+    console.log("myVariable is "+myVariable); 
     window.location='turma.html?turmaId=' + myVariable; 
   });
 
