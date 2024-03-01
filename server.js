@@ -23,6 +23,17 @@ app.post("/createAluna", async(req, res) => {
    await data.Turma.create(req.body);
    res.sendStatus(201);   
  });
+
+ app.delete("/deleteTurma/:id", async(req, res) => {
+  const id = req.params.id;
+  await data.Turma.destroy({
+      where: {
+          idTurma: id
+      }
+  });
+  res.sendStatus(200);
+});
+
  
  app.get("/findAllTurma", async(req, res) => {
   data.Turma.findAll()
