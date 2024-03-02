@@ -6,14 +6,14 @@ function deletarTurma(id) {
   xhr.onload = function() {
     if (xhr.status == 204) {
       console.log("Turma deletada com sucesso");
-      // Remover a linha da tabela
-      var row = document.getElementById('row-' + id);
-      row.parentNode.removeChild(row);
+      // Chamar o método callTurma para carregar a página
+      callTurma();
     } else {
       console.log("Erro ao deletar turma");
     }
   };
   xhr.send();
+window.onload = callTurma;
 }
 
 function callTurma() {
