@@ -10,7 +10,7 @@ const createWindow = () => {
     }
   })
   console.log("linha 12 main.js")
-  win.loadFile('src/views/editarCadastro.html');  
+  win.loadFile('src/views/index.html');  
 }
 console.log("linha 15 main.js")
 app.whenReady().then(() => {

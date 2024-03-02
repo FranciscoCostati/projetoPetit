@@ -126,6 +126,7 @@ const Turma = db.define('turma', {
 const AlunaTurma = db.define('aluna_turma', {
     idAlunaTurma: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         primaryKey: true
     },
     fk_idAluna: {

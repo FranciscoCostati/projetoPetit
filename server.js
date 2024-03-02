@@ -26,6 +26,11 @@ app.post("/createAluna", async(req, res) => {
 
  app.delete("/deleteTurma/:id", async(req, res) => {
   const id = req.params.id;
+  await data.AlunaTurma.destroy({
+    where:{
+      fk_idTurma: id
+    }
+  })
   await data.Turma.destroy({
       where: {
           idTurma: id

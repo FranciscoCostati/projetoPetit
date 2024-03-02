@@ -29,15 +29,6 @@ for (var i = 0; i < Turmas.length; i++) {
 
   tr.appendChild(tdId);
   tr.appendChild(tddescricao);
-
-  tr.addEventListener('click', function() {
-    var firstCell = this.cells[0];
-    var firstCellValue = firstCell.textContent || firstCell.innerText;
-    var myVariable = firstCellValue;
-    console.log("myVariable is "+myVariable); 
-    window.location='turma.html?turmaId=' + myVariable; 
-  });
-
   tbody.appendChild(tr);
 }
 

@@ -1,6 +1,8 @@
 var tbody = document.querySelector("tbody");
 
 function deletarTurma(id) {
+  var confirmation = confirm("Tem certeza que quer deletar a turma");
+  if(confirmation){
   var xhr = new XMLHttpRequest();
   xhr.open("DELETE", "http://localhost:8083/deleteTurma/" + id);
   xhr.onload = function() {
@@ -13,8 +15,10 @@ function deletarTurma(id) {
     }
   };
   xhr.send();
-window.onload = callTurma;
+window.location.reload()
+  }
 }
+
 
 function callTurma() {
   var xhr = new XMLHttpRequest();
