@@ -14,6 +14,7 @@ function deletarTurma(id) {
     }
   };
   xhr.send();
+window.onload = callTurma;
 }
 
 function callTurma() {
