@@ -15,7 +15,7 @@ git merge dev
 
 git add src/ server.js public/ db/ package.json package-lock.json QA.md task.md forge.config.js .vscode/ git.md 
 
-git commit -m "Ajust list Aluna for turma"
+git commit -m "Ajust list Aluna for turma" 
 
 # Delete branch
 
