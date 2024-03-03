@@ -1,8 +1,8 @@
 git pull origin dev
 
-git add src/ server.js public/ db/ package.json package-lock.json QA.md task.md forge.config.js .vscode/ git.md 
+git add src/ server.js public/ db/ package.json package-lock.json QA.md task.md forge.config.js .vscode/ git.md  &&
 
-git commit -m "Code in Progress" 
+git commit -m "Code in Progress" &&
 
 git push -u origin dev 
 

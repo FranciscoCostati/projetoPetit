@@ -21,7 +21,7 @@
         <div class="form-box">
             <h2>Cadastrar Aluna</h2>
 
-            <form action="http://localhost:8083/createAluna" method="post">
+            <form id="form1" action="http://localhost:8083/createAluna" method="post">
                 <div class="input-group w50">
                     <label for="nomeResponsavel"> Nome do responsável</label>
                     <input type="text" id="nomeResponsavel" name="nomeResponsavel" required>
@@ -42,75 +42,11 @@
                     <input type="text" id="cpfRgAluna" name="cpfRgAluna" >
                 </div>
 
-
-
-                <!-- <div class="input-group w50">
-                    <label for="telefone">Celular</label>
-                    <input type="tel" id="celular" name="" >
-                </div>
-
-                <div class="input-group w50">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="">
-                </div>
-
-                <div class="input-group w30">
-                    <label for="nome">Rua</label>
-                    <input type="text" id="nome" name="" >
-                </div>
-
-
-                <div class="input-group w10">
-                    <label for="nome">N°</label>
-                    <input type="text" id="nome" name="" >
-                </div>
-                <div class="input-group w30">
-                    <label for="nome">Bairro</label>
-                    <input type="text" id="nome" name="" >
-                </div>
-                <div class="input-group w30">
-                    <label for="municipio">Município</label>
-                    <input list="municipios" id="municipio" name="" >
-                    <datalist id="municipios">
-                        <option value="Itaquqquecetuba">
-                        <option value="Arujá">
-                        <option value="Suzano">
-                        <option value="Poá">
-                    </datalist>
-                </div>
-
-
-                <div class="input-group w40">
-                    <label for="turma">Turma</label>
-                    <input list="turmas" id="turma" name="" >
-                    <datalist id="turmas">
-                        <option value="Baby Class">
-                        <option value="Turma 1">
-                        <option value="Turma 2">
-                    </datalist>
-                </div>
-
-
-                <div class="input-group w40">
-                    <label for="horario">Horário da aula</label>
-                    <input list="horarios" id="horario" name="" >
-                    <datalist id="horarios">
-                        <option value="08:00">
-                        <option value="10:00">
-                        <option value="14:00">
-                        <option value="16:00">
-                    </datalist>
-                </div>
-                <div class="input-group w20">
-                    <label for="nome">Data de Matricula</label>
-                    <input type="text" id="nome" name="" >
-                </div> -->
-
                 <div class="input-group">
                     <button>Cadastrar</button>
                 </div>
-
             </form>
+    
         </div>
     </div>
     <script src="../controllers/converterDataHtmlToJson.js"></script>
