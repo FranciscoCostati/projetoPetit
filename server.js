@@ -19,9 +19,9 @@ app.post("/createAluna", async(req, res) => {
     fk_idAluna: newAluna.idAluna
    });
    res.sendStatus(201);   
- });
+ });  
 
-
+ 
  app.post("/createTurma", async(req, res) => {
     console.log(req.body)
     console.log("linha 15 server.js")
