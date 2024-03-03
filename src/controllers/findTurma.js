@@ -27,6 +27,15 @@ for (var i = 0; i < Turmas.length; i++) {
   tdId.textContent = Turmas[i].idTurma;
   tddescricao.textContent = Turmas[i].descricao;
 
+
+  tr.addEventListener('click', function() {
+    var firstCell = this.cells[0];
+    var firstCellValue = firstCell.textContent || firstCell.innerText;
+    var myVariable = firstCellValue;
+    console.log("myVariable is "+myVariable); 
+    window.location='turma.html?turmaId=' + myVariable; 
+  });
+
   tr.appendChild(tdId);
   tr.appendChild(tddescricao);
   tbody.appendChild(tr);

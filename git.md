@@ -2,6 +2,8 @@ git pull origin main
 
 git add src/ server.js public/ db/ package.json package-lock.json QA.md task.md forge.config.js .vscode/ git.md 
 
-git commit -m "clean scripts to start functionality that returns all values from the aluna table" 
+git commit -m "Code in Progress" 
 
 git push -u origin main 
+
+git push -u origin dev
