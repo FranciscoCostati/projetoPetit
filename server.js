@@ -15,7 +15,7 @@ app.post("/createAluna", async(req, res) => {
     console.log("linha 15 server.js")
     const newAluna =  await data.Aluna.create(req.body);
    await data.AlunaTurma.create({
-    fk_idTurma: 33,
+    fk_idTurma: req.body.Turma,
     fk_idAluna: newAluna.idAluna
    });
    res.sendStatus(201);   
@@ -48,13 +48,10 @@ app.post("/createAluna", async(req, res) => {
  app.get("/findAllTurma", async(req, res) => {
   data.Turma.findAll()
   .then(turmas => {
-    // Enviar o array de Turmas como resposta JSON
     res.json(turmas);
   })
   .catch(error => {
-    // Tratar o erro
     console.error(error);
-    // Enviar um status de erro como resposta
     res.status(500).send("Ocorreu um erro ao buscar as Turmas");
   });
 });
@@ -62,13 +59,9 @@ app.post("/createAluna", async(req, res) => {
  app.get("/findAllAluna", async(req, res) => {
     data.Aluna.findAll()
     .then(alunas => {
-      // Enviar o array de alunas como resposta JSON
-      res.json(alunas);
-    })
+      res.json(alunas);    })
     .catch(error => {
-      // Tratar o erro
       console.error(error);
-      // Enviar um status de erro como resposta
       res.status(500).send("Ocorreu um erro ao buscar as alunas");
     });
  });
@@ -85,13 +78,10 @@ app.post("/createAluna", async(req, res) => {
     }]
   })
   .then(turmaAluna => {
-    // Enviar o array de alunas como resposta JSON
     res.json(turmaAluna);
   })
   .catch(error => {
-    // Tratar o erro
     console.error(error);
-    // Enviar um status de erro como resposta
     res.status(500).send("Ocorreu um erro ao buscar as alunas");
   });
 });
@@ -101,9 +91,3 @@ app.listen(8083,() =>{
     console.log("linha 23 server.js")
     console.log("Server start in port 8083")
 })
-// app.post("/createAluna", async(req, res) => {
-//   console.log(req.body)
-//   console.log("linha 15 server.js")
-//  await data.Aluna.create(req.body);
-//  res.sendStatus(201);   
-// });
