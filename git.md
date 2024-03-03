@@ -4,7 +4,7 @@ git add src/ server.js public/ db/ package.json package-lock.json QA.md task.md 
 
 git commit -m "Code in Progress" 
 
-git push -u origin dev
+git push -u origin dev 
 
 
 # Update branch backup with information from dev branch and push to git
