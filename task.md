@@ -1,5 +1,6 @@
 # IN PROGRESS 
 Implement function edit Turma
+-Create Rote to edit Turma
 
 # Tasks
 Implement function delete aluna

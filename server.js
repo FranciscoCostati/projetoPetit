@@ -44,6 +44,20 @@ app.post("/createAluna", async(req, res) => {
   res.sendStatus(200);
 });
 
+app.put("/editTurma/:id", async(req, res) => {
+  const id = req.params.id;
+  const descricao = req.body; // assuming newValues is an object with the new values for the Turma
+
+  await data.Turma.update(descricao, {
+    where: {
+      idTurma: id
+    }
+  });
+
+  res.status(200).send("Turma atualizada para: "+ descricao.descricao);
+});
+
+
  
  app.get("/findAllTurma", async(req, res) => {
   data.Turma.findAll()
