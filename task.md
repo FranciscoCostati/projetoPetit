@@ -1,7 +1,10 @@
 # IN PROGRESS 
+Implement function delete aluna
+- Create Rote to edit Aluna
+- create HTML that lists the Aluna to be edited
+- create javascript to edit Aluna
 
 # Tasks
-Implement function delete aluna
 Implement function edit aluna
 - Create route to edit Aluna
 List aluna in alphabetical order within the turma
