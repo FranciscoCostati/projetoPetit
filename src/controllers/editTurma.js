@@ -34,7 +34,7 @@ for (var i = 0; i < Turmas.length; i++) {
     var firstCellValue = firstCell.textContent || firstCell.innerText;
     var myVariableStore = firstCellValue;
     console.log("myVariable is "+myVariableStore); 
-    localStorage.setItem('myVariable', myVariableStore);
+    localStorage.setItem('myVariableStore', myVariableStore);
 
     window.location='editarTurma2.html' 
   });

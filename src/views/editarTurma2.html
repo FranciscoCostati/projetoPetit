@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <title>Formulario responsivo com html e css</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../controllers/editTurma2.js"></script>
+
 </head>
 
 <body>
@@ -31,32 +33,10 @@
     </div>
 
 <script src="../controllers/converterDataHtmlToJson.js"></script>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-
-var myVariableStore = localStorage.getItem('myVariable');
-console.log("myVariable is "+myVariableStore);
-
-    document.getElementById('editTurmaForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // console.log("myVariable is "+myVariable); 
-        // let turmaId = 48; // Substitua pelo ID da turma que você deseja editar
-        let descricao = document.getElementById('descricao').value;
-
-        fetch(`http://localhost:8083/editTurma/${myVariableStore}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ descricao: descricao }),
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    });
-</script>
+<script src="../controllers/editTurma2.js"></script>
 <script>
     $(function() {
         $("#header").load("header.html #menuPrincipal");
