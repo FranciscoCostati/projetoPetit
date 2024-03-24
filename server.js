@@ -10,6 +10,7 @@ app.get("/", async (req, res)=>{
     res.send("Init Page")
 })
 console.log("linha 12 server.js")
+
 app.post("/createAluna", async(req, res) => {
     console.log(req.body)
     console.log("linha 15 server.js")
@@ -39,6 +40,21 @@ app.post("/createAluna", async(req, res) => {
   await data.Turma.destroy({
       where: {
           idTurma: id
+      }
+  });
+  res.sendStatus(200);
+});
+
+app.delete("/deleteAluna/:id", async(req, res) => {
+  const id = req.params.id;
+  await data.AlunaTurma.destroy({
+    where:{
+      fk_idAluna: id
+    }
+  })
+  await data.Aluna.destroy({
+      where: {
+          idAluna: id
       }
   });
   res.sendStatus(200);

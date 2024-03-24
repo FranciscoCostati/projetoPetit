@@ -1,8 +1,9 @@
 # IN PROGRESS 
 Implement function delete aluna
-- Create Rote to edit Aluna
-- create HTML that lists the Aluna to be edited
-- create javascript to edit Aluna
++ Create Rote to delete Aluna
++ create request for Url via postman
+- create HTML that lists the Aluna to be delet
+- create javascript to delete Aluna
 
 # Tasks
 Implement function edit aluna
@@ -23,6 +24,7 @@ Implement login master editarCadastro
 Ajusted Postman to consume the createAluna route(modified)
 insert Turma when registering Aluna 
 Implement function edit Turma
-+ Create Rote to edit Turma
++ create Rote to edit Turma
++ create request for Url via postman
 + create HTML that lists the Turma to be edited
 + create javascript to edit Turma
