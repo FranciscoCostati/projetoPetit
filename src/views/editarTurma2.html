@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario responsivo com html e css</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <hr>
+    <div class="box">
+        <div class="form-box">
+            <h2>Editar Turma</h2>
+            <form id="editTurmaForm">
+                <div class="input-group w33">
+                    <label for="descricao"> Nome da Turma</label>
+                    <input type="text" id="descricao" name="descricao" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Editar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="../controllers/converterDataHtmlToJson.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+var myVariableStore = localStorage.getItem('myVariable');
+console.log("myVariable is "+myVariableStore);
+
+    document.getElementById('editTurmaForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // console.log("myVariable is "+myVariable); 
+        // let turmaId = 48; // Substitua pelo ID da turma que você deseja editar
+        let descricao = document.getElementById('descricao').value;
+
+        fetch(`http://localhost:8083/editTurma/${myVariableStore}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ descricao: descricao }),
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+<script>
+    $(function() {
+        $("#header").load("header.html #menuPrincipal");
+    });
+</script> 
+</body>
+
+</html>

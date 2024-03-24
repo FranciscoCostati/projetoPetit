@@ -1,10 +1,13 @@
 # IN PROGRESS 
 Implement function edit Turma
--Create Rote to edit Turma
++ Create Rote to edit Turma
+
+- create HTML that lists the Turma to be edited
 
 # Tasks
 Implement function delete aluna
 Implement function edit aluna
+- Create route to edit Aluna
 List aluna in alphabetical order within the turma
 Implement all the return of all aluna attibutes
 Implement monthly fee feature, which inserts the debit on the selected payment date

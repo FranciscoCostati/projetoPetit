@@ -10,13 +10,14 @@ function listarTurmas() {
     if (xhr.status == 200) {
       var Turmas = JSON.parse(xhr.responseText);
 
-Turmas.sort(function(a, b) {
-  if (a.nomeTurma && b.nomeTurma) {
-    return a.nomeTurma.localeCompare(b.nomeTurma);
-  } else {
-    return 0;
-  }
-});
+// Turmas.sort(function(a, b) {
+//   if (a.nomeTurma && b.nomeTurma) {
+//     return a.nomeTurma.localeCompare(b.nomeTurma);
+//   } else {
+//     return 0;
+//   }
+// }
+// );
 
 
 for (var i = 0; i < Turmas.length; i++) {
@@ -31,9 +32,11 @@ for (var i = 0; i < Turmas.length; i++) {
   tr.addEventListener('click', function() {
     var firstCell = this.cells[0];
     var firstCellValue = firstCell.textContent || firstCell.innerText;
-    var myVariable = firstCellValue;
-    console.log("myVariable is "+myVariable); 
-    window.location='turma.html?turmaId=' + myVariable; 
+    var myVariableStore = firstCellValue;
+    console.log("myVariable is "+myVariableStore); 
+    localStorage.setItem('myVariable', myVariableStore);
+
+    window.location='editarTurma2.html' 
   });
 
   tr.appendChild(tdId);
