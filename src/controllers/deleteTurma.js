@@ -19,7 +19,6 @@ window.location.reload()
   }
 }
 
-
 function callTurma() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://localhost:8083/findAllTurma");
