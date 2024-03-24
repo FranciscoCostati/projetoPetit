@@ -10,14 +10,14 @@ function listarTurmas() {
     if (xhr.status == 200) {
       var Turmas = JSON.parse(xhr.responseText);
 
-// Turmas.sort(function(a, b) {
-//   if (a.nomeTurma && b.nomeTurma) {
-//     return a.nomeTurma.localeCompare(b.nomeTurma);
-//   } else {
-//     return 0;
-//   }
-// }
-// );
+Turmas.sort(function(a, b) {
+  if (a.nomeTurma && b.nomeTurma) {
+    return a.nomeTurma.localeCompare(b.nomeTurma);
+  } else {
+    return 0;
+  }
+}
+);
 
 
 for (var i = 0; i < Turmas.length; i++) {

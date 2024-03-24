@@ -1,8 +1,4 @@
 # IN PROGRESS 
-Implement function edit Turma
-+ Create Rote to edit Turma
-
-- create HTML that lists the Turma to be edited
 
 # Tasks
 Implement function delete aluna
@@ -23,3 +19,7 @@ Implement login master editarCadastro
 
 Ajusted Postman to consume the createAluna route(modified)
 insert Turma when registering Aluna 
+Implement function edit Turma
++ Create Rote to edit Turma
++ create HTML that lists the Turma to be edited
++ create javascript to edit Turma
