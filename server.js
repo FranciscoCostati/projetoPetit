@@ -75,15 +75,19 @@ app.put("/editTurma/:id", async(req, res) => {
 
 app.put("/editAluna/:id", async(req, res) => {
   const id = req.params.id;
-  const dataAluna = req.body; // assuming newValues is an object with the new values for the Turma
-  console.log(dataAluna)
-  console.log(id)
+  const dataAluna = req.body[0];
+  const dataAlunaTurma = req.body[1];
+ 
   await data.Aluna.update(dataAluna, {
     where: {
       idAluna: id
     }
-  });
-
+  })
+  await data.AlunaTurma.update(dataAlunaTurma,{
+    where: {
+      fk_idAluna: id
+        }
+   });
   res.status(200).send("Aluna atualizada para: ");
 });
  
