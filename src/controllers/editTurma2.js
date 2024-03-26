@@ -18,6 +18,7 @@ console.log("myVariable is "+myVariableStore);
         })
         .then(response => response.json())
         .then(data => console.log(data))
+        .then(window.location = 'listaDeTurmas.html')
         .catch((error) => {
             console.error('Error:', error);
         });
