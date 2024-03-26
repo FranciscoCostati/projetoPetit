@@ -1,9 +1,9 @@
 # IN PROGRESS 
-Implement function delete aluna
-+ Create Rote to delete Aluna
-+ create request for Url via postman
+Implement function edit aluna
++ Create Rote to edit Aluna
+- create request for Url via postman
 - create HTML that lists the Aluna to be delet
-- create javascript to delete Aluna
+- create javascript to edit Aluna
 
 # Tasks
 Implement function edit aluna
@@ -28,3 +28,8 @@ Implement function edit Turma
 + create request for Url via postman
 + create HTML that lists the Turma to be edited
 + create javascript to edit Turma
+Implement function delete aluna
++ Create Rote to delete Aluna
++ create request for Url via postman
+- create HTML that lists the Aluna to be delet
+- create javascript to delete Aluna

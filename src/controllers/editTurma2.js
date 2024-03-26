@@ -21,4 +21,6 @@ console.log("myVariable is "+myVariableStore);
         .catch((error) => {
             console.error('Error:', error);
         });
+        console.log(descricao)
+        console.log(body)
     });

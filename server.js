@@ -73,7 +73,19 @@ app.put("/editTurma/:id", async(req, res) => {
   res.status(200).send("Turma atualizada para: "+ descricao.descricao);
 });
 
+app.put("/editAluna/:id", async(req, res) => {
+  const id = req.params.id;
+  const dataAluna = req.body; // assuming newValues is an object with the new values for the Turma
+  console.log(dataAluna)
+  console.log(id)
+  await data.Aluna.update(dataAluna, {
+    where: {
+      idAluna: id
+    }
+  });
 
+  res.status(200).send("Aluna atualizada para: ");
+});
  
  app.get("/findAllTurma", async(req, res) => {
   data.Turma.findAll()
