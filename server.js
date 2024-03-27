@@ -77,17 +77,29 @@ app.put("/editAluna/:id", async(req, res) => {
   const id = req.params.id;
   const dataAluna = req.body[0];
   const dataAlunaTurma = req.body[1];
- 
+  const validation = dataAlunaTurma.fk_idTurma
+console.log(validation)
   await data.Aluna.update(dataAluna, {
     where: {
       idAluna: id
     }
   })
-  await data.AlunaTurma.update(dataAlunaTurma,{
-    where: {
+  
+
+    await data.AlunaTurma.create({
+      fk_idTurma: validation,
       fk_idAluna: id
-        }
-   });
+     });
+  
+
+
+
+  // await data.AlunaTurma.update(dataAlunaTurma,{
+  //   where: {
+  //     fk_idAluna: id
+  //       }
+  //  });
+  
   res.status(200).send("Aluna atualizada para: ");
 });
  
