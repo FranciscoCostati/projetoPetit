@@ -78,45 +78,45 @@ app.put("/editAluna/:id", async (req, res) => {
   const idAluna = req.params.id;
   const dataAluna = req.body[0];
   const datafk_idTurma = req.body[1].fk_idTurma;
-    let checkDatafk_idTurma =1;
+  let checkDatafk_idTurma = true;
 
-    await data.AlunaTurma.findAll()
-      .then(turmas => {
-        // Check if 'fk_idAluna = 1' exists in 'turmas'
-        const exists = turmas.some(turma => turma.fk_idAluna === Number(idAluna));
-        console.log(turmas)
-  console.log(idAluna)
-  console.log(checkDatafk_idTurma)
-  console.log(exists)
-
-        if (exists === false) {
-          checkDatafk_idTurma = 0;
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        res.status(500).send("Ocorreu um erro ao buscar as Turmas");
-      });  
+  await data.AlunaTurma.findAll()
+    .then(aluna_turma => {
+      // Check if 'fk_idAluna = 1' exists in 'turmas'
+      const exists = aluna_turma.some(aluna_turma => aluna_turma.fk_idAluna === Number(idAluna));
+      console.log(aluna_turma)
+      console.log(idAluna)
       console.log(checkDatafk_idTurma)
-    await data.Aluna.update(dataAluna, {
-      where: {
-        idAluna: idAluna
+      console.log(exists)
+
+      if (!exists) {
+        checkDatafk_idTurma = false;
       }
     })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send("Ocorreu um erro ao buscar as Turmas");
+    });
+  console.log(checkDatafk_idTurma)
+  await data.Aluna.update(dataAluna, {
+    where: {
+      idAluna: idAluna
+    }
+  })
 
-  if(checkDatafk_idTurma === 0){
+  if (checkDatafk_idTurma === false) {
     await data.AlunaTurma.create({
       fk_idTurma: datafk_idTurma,
       fk_idAluna: idAluna
     });
-  }else{
+  } else {
 
-  await data.AlunaTurma.update({ fk_idTurma: datafk_idTurma }, {
-    where: {
-      fk_idAluna: idAluna
-    }
-  });
-}
+    await data.AlunaTurma.update({ fk_idTurma: datafk_idTurma }, {
+      where: {
+        fk_idAluna: idAluna
+      }
+    });
+  }
   console.log(idAluna)
   console.log(datafk_idTurma)
 
