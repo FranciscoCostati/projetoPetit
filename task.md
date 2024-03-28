@@ -1,9 +1,12 @@
 # IN PROGRESS 
 
++ Adjust name tables in data base
+[In Progress] modify database logical model
+[In Progress] update databese in script registerData.js
+[In Progress] update database names in code
 
 # Tasks
-Create route to edit Aluna
-List aluna in alphabetical order within the turma
+
 Implement all the return of all aluna attibutes
 Implement monthly fee feature, which inserts the debit on the selected payment date
 
@@ -16,7 +19,7 @@ Implement login master editarCadastro
 
 # Closed
 
-
++ List aluna in alphabetical order within the turma
 + insert Turma when registering Aluna 
 
 + Implement function edit Turma
